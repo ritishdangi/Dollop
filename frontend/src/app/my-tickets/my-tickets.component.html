@@ -1,0 +1,41 @@
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-left navbar-title">
+    {{ dashboardTitle }}
+  </div>
+  <div class="navbar-right">
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<h2 class="heading">🎫 My Tickets</h2>
+
+<div *ngIf="tickets.length; else noTickets" class="ticket-grid">
+  <div *ngFor="let t of tickets" class="ticket-card">
+    <!-- Customer Info -->
+    <div class="user-info">
+      <span class="user-icon">👤</span>
+      <strong>{{ customerName }}</strong>
+    </div>
+
+    <!-- Ticket Info -->
+    <h3>{{ t.title }}</h3>
+    <p class="desc">{{ t.description }}</p>
+
+    <div class="meta">
+      <span class="priority"><strong>Priority:</strong> {{ t.priority }}</span>
+      <span class="status"><strong>Status:</strong> {{ t.status }}</span>
+    </div>
+
+    <!-- Assign Button (Admin Only) -->
+    <div *ngIf="isAdmin" class="assign-col">
+      <button class="assign-btn" (click)="assignTicket(t)" [disabled]="t.status === 'RESOLVED'">
+        Assign
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noTickets>
+  <p class="empty-msg">No tickets found.</p>
+</ng-template>

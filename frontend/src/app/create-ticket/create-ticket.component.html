@@ -1,0 +1,23 @@
+<div class="form-bg">
+  <div class="form-container">
+    <h2>🎫 Create Ticket</h2>
+    <form (ngSubmit)="submitTicket()" #ticketForm="ngForm" class="ticket-form">
+
+      <label for="title"><i class="fa-solid fa-heading"></i> Title:</label>
+      <input id="title" name="title" [(ngModel)]="ticket.title" required placeholder="Enter ticket title" />
+
+      <label for="description"><i class="fa-solid fa-align-left"></i> Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="ticket.description" required placeholder="Describe your issue"></textarea>
+
+      <label for="priority"><i class="fa-solid fa-flag"></i> Priority:</label>
+      <select id="priority" name="priority" [(ngModel)]="ticket.priority" required>
+        <option value="" disabled selected>Select priority</option>
+        <option value="LOW">Low</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="HIGH">High</option>
+      </select>
+
+      <button type="submit" [disabled]="!ticketForm.form.valid">Submit</button>
+    </form>
+  </div>
+</div>
