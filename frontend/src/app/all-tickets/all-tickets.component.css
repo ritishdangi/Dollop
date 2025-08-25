@@ -1,0 +1,129 @@
+.page-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  padding: 20px;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+/* Ticket List Layout */
+.ticket-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* Card Background - gradient + shadow */
+.ticket-item {
+  background: linear-gradient(145deg, #ffffff, #f5f9ff);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  transition: all 0.25s ease-in-out;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.ticket-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Customer name */
+.customer-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.ticket-header h3 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: #003366;
+}
+
+/* Description styling */
+.description {
+  margin: 10px 0 16px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  border-left: 3px solid #0066cc;
+  padding-left: 10px;
+  background: rgba(0,102,204,0.05);
+  border-radius: 4px;
+}
+
+/* Meta details */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Status Badge */
+.status-badge {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  align-self: flex-start;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.OPEN { background-color: #007bff; }
+.status-badge.IN_PROGRESS { background-color: #ffc107; color: #333; }
+.status-badge.PENDING { background-color: #ff5722; }
+.status-badge.RESOLVED { background-color: #28a745; }
+
+/* Empty message */
+.empty-msg {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 50px;
+}
+
+/* Button */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.back-btn:hover {
+  background-color: #004c99;
+}

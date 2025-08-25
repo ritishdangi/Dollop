@@ -1,0 +1,22 @@
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-left navbar-title">
+    CUSTOMER DASHBOARD
+  </div>
+  <div class="navbar-right">
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- Dashboard Body -->
+<div class="dashboard-container">
+  <div class="dashboard-card">
+    <h2 class="navbar-left navbar-title">🎫 Customer Dashboard</h2>
+    <p>Welcome! What would you like to do today?</p>
+
+    <div class="action-buttons">
+      <button (click)="createTicket()">➕ Create Ticket</button>
+      <button (click)="viewTickets()">📄 View My Tickets</button>
+    </div>
+  </div>
+</div>

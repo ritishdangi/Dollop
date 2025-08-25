@@ -1,0 +1,39 @@
+<div class="page-bg">
+  <!-- your ticket list HTML here -->
+
+<h2 class="heading">🎫 All Tickets</h2>
+
+<ul *ngIf="tickets.length; else noTickets" class="ticket-list">
+  <li *ngFor="let t of tickets" class="ticket-item">
+    
+    <!-- Customer Name -->
+    <p class="customer-name">👤 <strong>{{ t.customerName || 'Loading...' }}</strong></p>
+
+    <!-- Ticket Title -->
+    <div class="ticket-header">
+      <h3>{{ t.title }}</h3>
+    </div>
+
+    <!-- Description -->
+    <p class="description">{{ t.description }}</p>
+
+    <!-- Meta Information -->
+    <div class="meta">
+      <span>📌 <strong>Priority:</strong> {{ t.priority }}</span>
+      <span>👨‍💼 <strong>Assigned CSR:</strong> {{ t.assignedToId || 'Unassigned' }}</span>
+      <span>📅 <strong>Created:</strong> {{ t.createdAt | date: 'short' }}</span>
+
+      <!-- Status under Created -->
+      <span class="status-badge" [ngClass]="t.status">{{ t.status }}</span>
+    </div>
+  </li>
+</ul>
+
+<ng-template #noTickets>
+  <p class="empty-msg">🚫 No tickets available.</p>
+</ng-template>
+
+<div class="btn-container">
+  <button class="back-btn" routerLink="/admin-dashboard">⬅ Back to Dashboard</button>
+</div>
+</div>
